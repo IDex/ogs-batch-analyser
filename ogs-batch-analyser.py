@@ -70,6 +70,7 @@ parser = argparse.ArgumentParser(
     description='Script that downloads user\'s games from OGS and analyses them.')
 parser.add_argument(
     'user',
+    type=int,
     help='User id of the user whose games you want to download (example: 123456)')
 parser.add_argument(
     '--number', '-n',
