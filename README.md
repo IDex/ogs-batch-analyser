@@ -2,20 +2,23 @@
 Script that downloads user's games from OGS and analyses them using an external analysis tool like the one found at [lightvector/leela-analysis](https://github.com/lightvector/leela-analysis).
 ### Example usage
 ```
-[idex@ide ogs-batch-analyser]$ ogs-batch-analyser.py 467993 -s -n 1 -o -c "~/go/leela-analysis/sgfanalyze.py --analyze-thresh .05 --var-thresh .05 --secs-per-search 5 --leela ~/go/leela-analysis/leela_0110_linux_x64_opencl" 
+ogs-batch-analyser 467993 --skip --number 1 --oldest --command "~/go/leela-analysis/sgfanalyze.py --analyze-thresh .05 --var-thresh .05 --secs-per-search 5 --leela ~/go/leela-analysis/leela_0110_linux_x64_opencl"
 Getting game no. 0, on page 1
 Downloaded game 9859644
 Analysed game 9859644
 ```
 ### Installation
-In the main directory run 
-`pip install .`
-Requires python 3.6, addionally uses requests module.
+Requires python 3.6, addionally uses the *requests* module.
+```
+git clone
+cd ogs-batch-analyser
+pip install .
+```
 ### --help output
 ```
-usage: ogs-batch-analyser.py [-h] [--number NUMBER] [--oldest]
-                             [--download-only] [--skip] [--command COMMAND]
-                             user
+usage: ogs-batch-analyser [-h] [--number NUMBER] [--oldest] [--download-only]
+                          [--skip] [--command COMMAND]
+                          user
 
 Script that downloads user's games from OGS and analyses them.
 
